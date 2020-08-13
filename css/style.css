@@ -1,10 +1,10 @@
 body {
-  font-family: "Open Sans", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 15px;
   line-height: 1.8;
-  color: #b3b3b3;
-  background: #fff;
+  color: #e6e6e6;
+  background: rgb(157, 171, 182);
 }
 
 a {
@@ -12,6 +12,10 @@ a {
   -o-transition: .3s all ease;
   transition: .3s all ease;
   text-decoration: none;
+}
+
+.links a{
+  color: rgb(1, 18, 65);
 }
 
 a:hover {
@@ -115,7 +119,7 @@ header .navbar-brand.absolute {
 }
 
 header .navbar-brand span {
-  color: #F73859;
+  color: rgb(187, 101, 115);
 }
 
 header .navbar {
