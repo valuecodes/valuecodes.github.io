@@ -18,7 +18,9 @@ for (var i = 0; i < items.length; i++) {
 }
 
 let navbar = document.getElementsByClassName("navbar-nav")[0];
+console.log(navbar);
+let li = document.createElement("li");
+li.className = "nav-item menu-large";
+li.innerHTML = '<a class="nav-link">Newsletter</a>';
 
-navbar.appendChild(
-  '<li class="nav-item menu-large"><a class="nav-link">Newsletter</a></li>'
-);
+navbar.appendChild(li);
