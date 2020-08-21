@@ -23,4 +23,6 @@ li.className = "nav-item menu-large";
 li.innerHTML = '<a class="nav-link">Newsletter</a>';
 li.style.cursor = "pointer";
 
+li.onclick((e) => console.log("test"));
+
 navbar.appendChild(li);
