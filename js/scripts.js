@@ -17,3 +17,9 @@ for (var i = 0; i < items.length; i++) {
   items[i].style.margin = "10px 20px";
   items[i].style.boxShadow = "2px 2px 10px";
 }
+
+let navbar = document.getElementsByClassName("navbar-nav mr-auto")[0];
+
+navbar.appendChild(
+  '<li class="nav-item menu-large"><a class="nav-link">Newsletter</a></li>'
+);
