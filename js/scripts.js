@@ -24,7 +24,7 @@ li.innerHTML = '<a class="nav-link">Newsletter</a>';
 li.style.cursor = "pointer";
 
 li.onclick = function () {
-  alert("blah");
+  console.log("test");
 };
 
 navbar.appendChild(li);
