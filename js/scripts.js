@@ -12,6 +12,8 @@ document.getElementsByTagName("body")[0].style.fontFamily = "Impact";
 
 let items = document.getElementsByClassName("item");
 
+console.log(items);
+
 items.forEach((item) => {
   item.style.margin = "10px 20px";
   item.style.boxShadow = "2px 2px 10px";
