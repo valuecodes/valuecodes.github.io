@@ -18,9 +18,8 @@ for (var i = 0; i < items.length; i++) {
 }
 
 let navbar = document.getElementsByClassName("navbar-nav")[0];
-console.log(navbar);
 let li = document.createElement("li");
 li.className = "nav-item menu-large";
 li.innerHTML = '<a class="nav-link">Newsletter</a>';
-
+li.style.cursor = "pointer";
 navbar.appendChild(li);
