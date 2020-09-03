@@ -1,217 +1,248 @@
-(function($) {
+(function ($) {
+  "use strict";
 
-	'use strict';
-
-	// bootstrap dropdown hover
+  // bootstrap dropdown hover
 
   // loader
-  var loader = function() {
-    setTimeout(function() { 
-      if($('#loader').length > 0) {
-        $('#loader').removeClass('show');
+  var loader = function () {
+    setTimeout(function () {
+      if ($("#loader").length > 0) {
+        $("#loader").removeClass("show");
       }
     }, 1);
   };
   loader();
 
-	
-	$('nav .dropdown').hover(function(){
-		var $this = $(this);
-		$this.addClass('show');
-		$this.find('> a').attr('aria-expanded', true);
-		$this.find('.dropdown-menu').addClass('show');
-	}, function(){
-		var $this = $(this);
-			$this.removeClass('show');
-			$this.find('> a').attr('aria-expanded', false);
-			$this.find('.dropdown-menu').removeClass('show');
-	});
+  $("nav .dropdown").hover(
+    function () {
+      var $this = $(this);
+      $this.addClass("show");
+      $this.find("> a").attr("aria-expanded", true);
+      $this.find(".dropdown-menu").addClass("show");
+    },
+    function () {
+      var $this = $(this);
+      $this.removeClass("show");
+      $this.find("> a").attr("aria-expanded", false);
+      $this.find(".dropdown-menu").removeClass("show");
+    }
+  );
 
-
-  var offcanvas_toggle = $('.js-offcanvas-toggle');
-  offcanvas_toggle.on('click', function() {
-
-
-    if ( $('body').hasClass('offcanvas-open') ) {
-      $('body').removeClass('offcanvas-open');
+  var offcanvas_toggle = $(".js-offcanvas-toggle");
+  offcanvas_toggle.on("click", function () {
+    if ($("body").hasClass("offcanvas-open")) {
+      $("body").removeClass("offcanvas-open");
     } else {
-      $('body').addClass('offcanvas-open');
+      $("body").addClass("offcanvas-open");
     }
-
   });
 
-
-  $(document).click(function(e) {
-    var container = $('.js-offcanvas-toggle, #offcanvas_menu');
+  $(document).click(function (e) {
+    var container = $(".js-offcanvas-toggle, #offcanvas_menu");
     if (!container.is(e.target) && container.has(e.target).length === 0) {
-      if ( $('body').hasClass('offcanvas-open') ) {
-        $('body').removeClass('offcanvas-open');
+      if ($("body").hasClass("offcanvas-open")) {
+        $("body").removeClass("offcanvas-open");
       }
     }
   });
 
-
-  $('#date-countdown').countdown('2020/10/10', function(event) {
-  var $this = $(this).html(event.strftime(''
-    + '<span class="countdown-block"><span class="label">%w</span> weeks </span>'
-    + '<span class="countdown-block"><span class="label">%d</span> days </span>'
-    + '<span class="countdown-block"><span class="label">%H</span> hr </span>'
-    + '<span class="countdown-block"><span class="label">%M</span> min </span>'
-    + '<span class="countdown-block"><span class="label">%S</span> sec</span>'));
-});
-
-	// home slider
-	$('.home-slider').owlCarousel({
-    loop:true,
-    autoplay: true,
-    margin:10,
-    animateOut: 'fadeOut',
-    animateIn: 'fadeIn',
-    nav:true,
-    autoplayHoverPause: false,
-    items: 1,
-    navText : ["<span class='ion-chevron-left'></span>","<span class='ion-chevron-right'></span>"],
-    responsive:{
-      0:{
-        items:1,
-        nav:false
-      },
-      600:{
-        items:1,
-        nav:false
-      },
-      1000:{
-        items:1,
-        nav:true
-      }
-    }
-	});
-
+  $("#date-countdown").countdown("2020/10/10", function (event) {
+    var $this = $(this).html(
+      event.strftime(
+        "" +
+          '<span class="countdown-block"><span class="label">%w</span> weeks </span>' +
+          '<span class="countdown-block"><span class="label">%d</span> days </span>' +
+          '<span class="countdown-block"><span class="label">%H</span> hr </span>' +
+          '<span class="countdown-block"><span class="label">%M</span> min </span>' +
+          '<span class="countdown-block"><span class="label">%S</span> sec</span>'
+      )
+    );
+  });
 
   // home slider
-  $('.testimony-slider').owlCarousel({
-    loop:true,
+  $(".home-slider").owlCarousel({
+    loop: true,
     autoplay: true,
-    margin:10,
-    animateOut: 'fadeOut',
-    animateIn: 'fadeIn',
-    nav:false,
+    margin: 10,
+    animateOut: "fadeOut",
+    animateIn: "fadeIn",
+    nav: true,
     autoplayHoverPause: false,
     items: 1,
-    navText : ["<span class='ion-chevron-left'></span>","<span class='ion-chevron-right'></span>"],
-    responsive:{
-      0:{
-        items:1,
-        nav:false
+    navText: [
+      "<span class='ion-chevron-left'></span>",
+      "<span class='ion-chevron-right'></span>",
+    ],
+    responsive: {
+      0: {
+        items: 1,
+        nav: false,
       },
-      600:{
-        items:1,
-        nav:false
+      600: {
+        items: 1,
+        nav: false,
       },
-      1000:{
-        items:1,
-        nav:false
-      }
-    }
+      1000: {
+        items: 1,
+        nav: true,
+      },
+    },
   });
 
-	// owl carousel
-	var majorCarousel = $('.js-carousel-1');
-	majorCarousel.owlCarousel({
-    loop:true,
+  // home slider
+  $(".testimony-slider").owlCarousel({
+    loop: true,
+    autoplay: true,
+    margin: 10,
+    animateOut: "fadeOut",
+    animateIn: "fadeIn",
+    nav: false,
+    autoplayHoverPause: false,
+    items: 1,
+    navText: [
+      "<span class='ion-chevron-left'></span>",
+      "<span class='ion-chevron-right'></span>",
+    ],
+    responsive: {
+      0: {
+        items: 1,
+        nav: false,
+      },
+      600: {
+        items: 1,
+        nav: false,
+      },
+      1000: {
+        items: 1,
+        nav: false,
+      },
+    },
+  });
+
+  // owl carousel
+  var majorCarousel = $(".js-carousel-1");
+  majorCarousel.owlCarousel({
+    loop: true,
     autoplay: true,
     stagePadding: 7,
     margin: 20,
-    animateOut: 'fadeOut',
-    animateIn: 'fadeIn',
+    animateOut: "fadeOut",
+    animateIn: "fadeIn",
     nav: true,
     autoplayHoverPause: true,
     items: 3,
-    navText : ["<span class='ion-chevron-left'></span>","<span class='ion-chevron-right'></span>"],
-    responsive:{
-      0:{
-        items:1,
-        nav:false
+    navText: [
+      "<span class='ion-chevron-left'></span>",
+      "<span class='ion-chevron-right'></span>",
+    ],
+    responsive: {
+      0: {
+        items: 1,
+        nav: false,
       },
-      600:{
-        items:2,
-        nav:false
+      600: {
+        items: 2,
+        nav: false,
       },
-      1000:{
-        items:3,
-        nav:true,
-        loop:false
-      }
-  	}
-	});
+      1000: {
+        items: 3,
+        nav: true,
+        loop: false,
+      },
+    },
+  });
 
-	// owl carousel
-	var major2Carousel = $('.js-carousel-2');
-	major2Carousel.owlCarousel({
-    loop:true,
+  // owl carousel
+  var major2Carousel = $(".js-carousel-2");
+  major2Carousel.owlCarousel({
+    loop: true,
     autoplay: true,
     stagePadding: 7,
     margin: 20,
-    animateOut: 'fadeOut',
-    animateIn: 'fadeIn',
+    animateOut: "fadeOut",
+    animateIn: "fadeIn",
     nav: true,
     autoplayHoverPause: true,
     items: 4,
-    navText : ["<span class='ion-chevron-left'></span>","<span class='ion-chevron-right'></span>"],
-    responsive:{
-      0:{
-        items:1,
-        nav:false
+    navText: [
+      "<span class='ion-chevron-left'></span>",
+      "<span class='ion-chevron-right'></span>",
+    ],
+    responsive: {
+      0: {
+        items: 1,
+        nav: false,
       },
-      600:{
-        items:3,
-        nav:false
+      600: {
+        items: 3,
+        nav: false,
       },
-      1000:{
-        items:4,
-        nav:true,
-        loop:false
-      }
-  	}
-	});
+      1000: {
+        items: 4,
+        nav: true,
+        loop: false,
+      },
+    },
+  });
 
+  var contentWayPoint = function () {
+    var i = 0;
+    $(".element-animate").waypoint(
+      function (direction) {
+        if (
+          direction === "down" &&
+          !$(this.element).hasClass("element-animated")
+        ) {
+          i++;
 
-	var contentWayPoint = function() {
-		var i = 0;
-		$('.element-animate').waypoint( function( direction ) {
+          $(this.element).addClass("item-animate");
+          setTimeout(function () {
+            $("body .element-animate.item-animate").each(function (k) {
+              var el = $(this);
+              setTimeout(function () {
+                var effect = el.data("animate-effect");
+                if (effect === "fadeIn") {
+                  el.addClass("fadeIn element-animated");
+                } else if (effect === "fadeInLeft") {
+                  el.addClass("fadeInLeft element-animated");
+                } else if (effect === "fadeInRight") {
+                  el.addClass("fadeInRight element-animated");
+                } else {
+                  el.addClass("fadeInUp element-animated");
+                }
+                el.removeClass("item-animate");
+              }, k * 100);
+            });
+          }, 100);
+        }
+      },
+      { offset: "95%" }
+    );
+  };
+  contentWayPoint();
 
-			if( direction === 'down' && !$(this.element).hasClass('element-animated') ) {
-				
-				i++;
+  var sliderEl = document.createElement("section");
+  sliderEl.classList.add("lazy", "slider");
+  sliderEl.setAttribute("data-sizes", "50vw");
+  document.body.appendChild(sliderEl);
 
-				$(this.element).addClass('item-animate');
-				setTimeout(function(){
+  function addSlide(theme) {
+    var slide = document.createElement("div");
+    var slideImage = document.createElement("img");
+    slideImage.setAttribute(
+      "data-lazy",
+      "http://placehold.it/350x300?text=1-350w"
+    );
+    slideImage.setAttribute(
+      "data-srcset",
+      "https://source.unsplash.com/2100x500/?" + theme
+    );
+    slideImage.setAttribute("data-sizes", "100vw");
+    slide.appendChild(slideImage);
+    sliderEl.appendChild(slide);
+  }
 
-					$('body .element-animate.item-animate').each(function(k){
-						var el = $(this);
-						setTimeout( function () {
-							var effect = el.data('animate-effect');
-							if ( effect === 'fadeIn') {
-								el.addClass('fadeIn element-animated');
-							} else if ( effect === 'fadeInLeft') {
-								el.addClass('fadeInLeft element-animated');
-							} else if ( effect === 'fadeInRight') {
-								el.addClass('fadeInRight element-animated');
-							} else {
-								el.addClass('fadeInUp element-animated');
-							}
-							el.removeClass('item-animate');
-						},  k * 100);
-					});
-					
-				}, 100);
-				
-			}
-
-		} , { offset: '95%' } );
-	};
-	contentWayPoint();
-
-
-
+  addSlide("nature");
+  addSlide("city");
+  addSlide("person");
 })(jQuery);
